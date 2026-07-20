@@ -182,6 +182,6 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:foam)'
-error_symbol = '[](bold fg:love)'
-vimcmd_symbol = '[](bold fg:iris)'
+success_symbol = '[](bold fg:foam)'
+error_symbol = '[](bold fg:love)'
+vimcmd_symbol = '[](bold fg:iris)'
