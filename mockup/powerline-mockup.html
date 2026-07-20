@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .window {
+    width: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    font-family: 'FiraCode Nerd Font', 'FiraCode Nerd Font Mono', 'Menlo', monospace;
+  }
+  .titlebar {
+    background: #2a2640; height: 30px; display: flex; align-items: center;
+    padding: 0 12px; gap: 8px;
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .red { background: #ff5f57; } .yellow { background: #febc2e; } .green { background: #28c840; }
+  .title { flex: 1; text-align: center; color: #a39cc7; font-size: 12px; margin-right: 60px; }
+  .body { background: #151225; padding: 18px 16px 22px; font-size: 14px; }
+
+  /* powerline row: slim, tight — no line gaps */
+  .pl { display: flex; align-items: stretch; line-height: 1.15; margin: 0; }
+  .seg {
+    display: inline-flex; align-items: center;
+    padding: 1px 9px; color: #151225; font-weight: 600;
+    white-space: pre;
+  }
+  /* separators are half-height-driven by the same line-height; they butt against segments */
+  .sep { display: inline-flex; align-items: center; font-size: 14px; }
+
+  .bg-iris { background: #a6a0de; }
+  .bg-foam { background: #8fcbe8; }
+  .bg-rose { background: #f5a9c5; }
+  .bg-gold { background: #efc873; }
+  .bg-pine { background: #5b4e8c; color: #f7f3ea; }
+  .bg-over { background: #231f3d; color: #a39cc7; }
+
+  .s-iris { color: #a6a0de; }
+  .s-foam { color: #8fcbe8; }
+  .s-rose { color: #f5a9c5; }
+  .s-gold { color: #efc873; }
+  .s-pine { color: #5b4e8c; }
+  .s-over { color: #231f3d; }
+  .on-foam { background: #8fcbe8; }
+  .on-rose { background: #f5a9c5; }
+  .on-gold { background: #efc873; }
+  .on-pine { background: #5b4e8c; }
+  .on-over { background: #231f3d; }
+
+  .cmd { color: #f7f3ea; }
+  .prompt-ok { color: #8fcbe8; font-weight: 700; }
+  .prompt-err { color: #e88fa3; font-weight: 700; }
+  .cmdline { line-height: 1.9; white-space: pre; }
+  .spacer { height: 7px; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+      <div class="title">yuumi.starship · powerline — zsh</div>
+    </div>
+    <div class="body">
+
+      <div class="pl"><span class="sep s-iris"></span><span class="seg bg-iris">󰄛 aroaxinping</span><span class="sep s-iris on-foam"></span><span class="seg bg-foam"> ~/yuumi-starship</span><span class="sep s-foam on-over"></span><span class="seg bg-over">󰴈 20:03</span><span class="sep s-over"></span></div>
+      <div class="cmdline"><span class="prompt-ok">❯</span> <span class="cmd">cd ~/yuumi-starship</span></div>
+
+      <div class="spacer"></div>
+
+      <div class="pl"><span class="sep s-iris"></span><span class="seg bg-iris">󰄛 aroaxinping</span><span class="sep s-iris on-foam"></span><span class="seg bg-foam"> …/yuumi-starship</span><span class="sep s-foam on-rose"></span><span class="seg bg-rose"> main !1</span><span class="sep s-rose on-gold"></span><span class="seg bg-gold"> 3.12.0</span><span class="sep s-gold on-pine"></span><span class="seg bg-pine"> orbstack</span><span class="sep s-pine on-over"></span><span class="seg bg-over">󰴈 20:04</span><span class="sep s-over"></span></div>
+      <div class="cmdline"><span class="prompt-ok">❯</span> <span class="cmd">git commit -m "pastel vibes"</span></div>
+
+      <div class="spacer"></div>
+
+      <div class="pl"><span class="sep s-iris"></span><span class="seg bg-iris">󰄛 aroaxinping</span><span class="sep s-iris on-foam"></span><span class="seg bg-foam"> …/yuumi-starship</span><span class="sep s-foam on-rose"></span><span class="seg bg-rose"> main ✓</span><span class="sep s-rose on-over"></span><span class="seg bg-over">󰴈 20:05</span><span class="sep s-over"></span></div>
+      <div class="cmdline"><span class="prompt-err">❯</span> </div>
+
+    </div>
+  </div>
+</body>
+</html>
