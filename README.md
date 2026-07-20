@@ -19,11 +19,11 @@ Fan-made palette. Not affiliated with or endorsed by Riot Games.
 
 ## Preview
 
-_Add a screenshot of your terminal here — drop a `preview.png` in this folder and it'll show up when you link it below:_
-
-```md
 ![preview](preview.png)
-```
+
+## Inspiration
+
+Yuumi, the Magical Cat — official champion page: [universe.leagueoflegends.com/en_US/champion/yuumi](https://universe.leagueoflegends.com/en_US/champion/yuumi/)
 
 ## Install
 
