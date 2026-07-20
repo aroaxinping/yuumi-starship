@@ -6,15 +6,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](iris)\
+[](iris)\
 $os\
 $username\
-[](fg:iris bg:foam)\
+[](fg:iris bg:foam)\
 $directory\
-[](fg:foam bg:rose)\
+[](fg:foam bg:rose)\
 $git_branch\
 $git_status\
-[](fg:rose bg:gold)\
+[](fg:rose bg:gold)\
 $c\
 $rust\
 $golang\
@@ -22,12 +22,12 @@ $nodejs\
 $java\
 $haskell\
 $python\
-[](fg:gold bg:pine)\
+[](fg:gold bg:pine)\
 $docker_context\
 $conda\
-[](fg:pine bg:overlay)\
+[](fg:pine bg:overlay)\
 $time\
-[](fg:overlay)\
+[](fg:overlay)\
 $line_break$character"""
 
 palette = "yuumi"
@@ -142,7 +142,7 @@ format = '[[ $symbol( $environment) ](fg:text bg:pine)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:overlay"
-format = '[[ 󰴈 $time ](fg:subtle bg:overlay)]($style)'
+format = '[[  $time ](fg:subtle bg:overlay)]($style)'
 
 [line_break]
 disabled = false
