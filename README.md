@@ -19,7 +19,15 @@ Fan-made palette. Not affiliated with or endorsed by Riot Games.
 
 ## Preview
 
+Two styles ship with this theme:
+
+**`yuumi.toml`** — minimal, line-framed prompt:
+
 ![preview](preview.png)
+
+**`yuumi-powerline.toml`** — powerline style with pastel pills (inspired by [Gruvbox Rainbow](https://starship.rs/presets/gruvbox-rainbow)):
+
+![powerline preview](preview-powerline.png)
 
 ## Inspiration
 
@@ -27,9 +35,11 @@ Yuumi, the Magical Cat — official champion page: [universe.leagueoflegends.com
 
 ## Install
 
-1. Copy `yuumi.toml` to your Starship config location:
+1. Copy the style you want to your Starship config location:
    ```bash
-   cp yuumi.toml ~/.config/starship.toml
+   cp yuumi.toml ~/.config/starship.toml            # line-framed style
+   # or
+   cp yuumi-powerline.toml ~/.config/starship.toml  # powerline style
    ```
 2. Make sure Starship is initialized in your shell rc (`~/.zshrc` or `~/.bashrc`):
    ```bash

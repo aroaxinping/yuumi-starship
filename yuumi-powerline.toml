@@ -1,0 +1,154 @@
+# yuumi-powerline.toml — powerline variant of the Yuumi pastel Starship theme
+# Fan-made palette, not affiliated with or endorsed by Riot Games.
+# Inspired by the Gruvbox Rainbow preset (https://starship.rs/presets/gruvbox-rainbow).
+# Needs a Nerd Font for the powerline separators and icons.
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](iris)\
+$os\
+$username\
+[](fg:iris bg:foam)\
+$directory\
+[](fg:foam bg:rose)\
+$git_branch\
+$git_status\
+[](fg:rose bg:gold)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$java\
+$haskell\
+$python\
+[](fg:gold bg:pine)\
+$docker_context\
+$conda\
+[](fg:pine bg:overlay)\
+$time\
+[](fg:overlay)\
+$line_break$character"""
+
+palette = "yuumi"
+
+[palettes.yuumi]
+base = '#151225'
+overlay = '#231f3d'
+muted = '#7a749e'
+subtle = '#a39cc7'
+text = '#f7f3ea'
+love = '#e88fa3'
+gold = '#efc873'
+rose = '#f5a9c5'
+pine = '#5b4e8c'
+foam = '#8fcbe8'
+iris = '#a6a0de'
+
+[os]
+disabled = false
+style = "bg:iris fg:base"
+
+[os.symbols]
+Macos = "󰄛"
+Windows = "󰄛"
+Ubuntu = "󰄛"
+Linux = "󰄛"
+Arch = "󰄛"
+Debian = "󰄛"
+Fedora = "󰄛"
+Alpine = "󰄛"
+Manjaro = "󰄛"
+Mint = "󰄛"
+Pop = "󰄛"
+Redhat = "󰄛"
+SUSE = "󰄛"
+Raspbian = "󰄛"
+Android = "󰄛"
+
+[username]
+show_always = true
+style_user = "bg:iris fg:base"
+style_root = "bg:iris fg:base"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:base bg:foam"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:rose"
+format = '[[ $symbol $branch ](fg:base bg:rose)]($style)'
+
+[git_status]
+style = "bg:rose"
+format = '[[($all_status$ahead_behind )](fg:base bg:rose)]($style)'
+
+[python]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[c]
+symbol = " "
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[java]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:pine"
+format = '[[ $symbol( $context) ](fg:text bg:pine)]($style)'
+
+[conda]
+style = "bg:pine"
+format = '[[ $symbol( $environment) ](fg:text bg:pine)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:overlay"
+format = '[[ 󰴈 $time ](fg:subtle bg:overlay)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:foam)'
+error_symbol = '[](bold fg:love)'
+vimcmd_symbol = '[](bold fg:iris)'
