@@ -1,0 +1,224 @@
+# yuumi.toml — a pastel Starship theme inspired by Yuumi (League of Legends)
+# Fan-made palette, not affiliated with or endorsed by Riot Games.
+# Symbols list: https://starship.rs/presets/nerd-font
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 5000
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Yuumi palette — pastel lavender, sky blue, gold magic, soft pink
+palette = "yuumi"
+
+[palettes.yuumi]
+base = '#151225'
+overlay = '#231f3d'
+muted = '#7a749e'
+subtle = '#a39cc7'
+text = '#f7f3ea'
+love = '#e88fa3'
+gold = '#efc873'
+rose = '#f5a9c5'
+pine = '#5b4e8c'
+foam = '#8fcbe8'
+iris = '#a6a0de'
+
+# Change the default prompt format
+format = """\
+[╭╴](muted)\
+$os\
+${custom.environment}\
+$jobs\
+$env_var\
+$all\
+[╰─](muted)\
+$character\
+"""
+
+# Custom command to show the environment (set $CONTEXT_ENV to use)
+[custom.environment]
+when = "test ! -z $CONTEXT_ENV"
+style = "gold"
+command = "echo $CONTEXT_ENV"
+format = "[$output]($style) "
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](foam)"
+error_symbol = "[](love)"
+
+# Shows an icon set via $STARSHIP_DISTRO in your shell rc
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](bold text)'
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+[os]
+format = '[$symbol]($style) '
+style = "iris"
+disabled = false
+
+[os.symbols]
+Alpaquita = "🐱 "
+Alpine = "🐱 "
+AlmaLinux = "🐱 "
+Amazon = "🐱 "
+Android = "🐱 "
+Arch = "🐱 "
+Artix = "🐱 "
+CentOS = "🐱 "
+Debian = "🐱 "
+DragonFly = "🐱 "
+Emscripten = "🐱 "
+EndeavourOS = "🐱 "
+Fedora = "🐱 "
+FreeBSD = "🐱 "
+Garuda = "🐱 "
+Gentoo = "🐱 "
+HardenedBSD = "🐱 "
+Illumos = "🐱 "
+Kali = "🐱 "
+Linux = "🐱 "
+Mabox = "🐱 "
+Macos = "🐱 "
+Manjaro = "🐱 "
+Mariner = "🐱 "
+MidnightBSD = "🐱 "
+Mint = "🐱 "
+NetBSD = "🐱 "
+NixOS = "🐱 "
+OpenBSD = "🐱 "
+openSUSE = "🐱 "
+OracleLinux = "🐱 "
+Pop = "🐱 "
+Raspbian = "🐱 "
+Redhat = "🐱 "
+RedHatEnterprise = "🐱 "
+RockyLinux = "🐱 "
+Redox = "🐱 "
+Solus = "🐱 "
+SUSE = "🐱 "
+Ubuntu = "🐱 "
+Unknown = "🐱 "
+Void = "🐱 "
+Windows = "🐱 "
+
+# Shows the username
+[username]
+style_user = "bold text"
+style_root = "bold love"
+format = "[$user]($style) "
+disabled = true
+show_always = false
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "love"
+read_only = "  "
+format = "at [$path](bold foam)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = "󰊢 "
+format = "on [$symbol$branch]($style) "
+truncation_length = 15
+truncation_symbol = "…/"
+style = "bold pine"
+
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold love"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](gold)'
+renamed = "襁 "
+deleted = " "
+
+[jobs]
+symbol = '✦'
+style = "iris"
+number_threshold = 2
+symbol_threshold = 1
+
+[azure]
+disabled = true
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'pine bold'
+
+[gcloud]
+disabled = true
+symbol = '🇬️'
+format = '[$symbol$active]($style) '
+style = 'bold gold'
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+disabled = true
+
+[[battery.display]] # low battery
+threshold = 10
+style = 'bold love'
+
+[[battery.display]] # mid battery
+threshold = 90
+style = 'bold gold'
+discharging_symbol = '🔋 '
+
+[terraform]
+style = "rose"
+format = "via [󱁢 $version]($style)  [$workspace]($style) "
+
+[vagrant]
+style = "rose"
+format = "via [ vagrant $version]($style) "
+
+[docker_context]
+format = "via [ $context](bold rose) "
+detect_extensions = ['.Dockerfile']
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', '*.Dockerfile', 'Dockerfile']
+disabled = false
+
+[helm]
+format = "via [  $version](bold rose) "
+
+[python]
+style = "rose"
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)\] '
+
+[nodejs]
+style = "rose"
+symbol = " "
+format = '\[[$symbol($version)]($style)\] '
+disabled = false
+
+[ruby]
+style = "rose"
+format = "via [ $version]($style) "
+
+[kubernetes]
+format = 'on [󱃾 $context\($namespace\)](bold rose) '
+disabled = false
+
+[pulumi]
+command_timeout = 5000
+symbol = '🛥 '
+format = ' [$symbol ($version) $stack]($style) '
+disabled = true
+
+[golang]
+style = "rose"
+symbol = " "
+format = 'via [$symbol($version )($mod_version )]($style)'
