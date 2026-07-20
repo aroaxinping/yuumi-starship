@@ -1,9 +1,12 @@
-# yuumi-powerline.toml — powerline variant of the Yuumi pastel Starship theme
-# Fan-made palette, not affiliated with or endorsed by Riot Games.
-# Inspired by the Gruvbox Rainbow preset (https://starship.rs/presets/gruvbox-rainbow).
+# ~/.config/starship.toml — my personal prompt
+# yuumi.starship powerline — pastel theme inspired by Yuumi (League of Legends)
+# Full theme repo: https://github.com/aroaxinping/yuumi-starship
+# Language & tool icons adapted from the Gruvbox Rainbow preset.
 # Needs a Nerd Font for the powerline separators and icons.
 
 "$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 1000
 
 format = """
 [](iris)\
@@ -16,15 +19,20 @@ $git_branch\
 $git_status\
 [](fg:rose bg:gold)\
 $c\
+$cpp\
 $rust\
 $golang\
 $nodejs\
+$bun\
+$php\
 $java\
+$kotlin\
 $haskell\
 $python\
 [](fg:gold bg:pine)\
 $docker_context\
 $conda\
+$pixi\
 [](fg:pine bg:overlay)\
 $time\
 [](fg:overlay)\
@@ -80,13 +88,13 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = "󰝚 "
-"Pictures" = " "
+"Pictures" = " "
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:rose"
 format = '[[ $symbol $branch ](fg:base bg:rose)]($style)'
 
@@ -94,49 +102,74 @@ format = '[[ $symbol $branch ](fg:base bg:rose)]($style)'
 style = "bg:rose"
 format = '[[($all_status$ahead_behind )](fg:base bg:rose)]($style)'
 
-[python]
-symbol = ""
-style = "bg:gold"
-format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:gold"
-format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
-
 [c]
-symbol = " "
+symbol = " "
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[cpp]
+symbol = " "
 style = "bg:gold"
 format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:gold"
 format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[php]
+symbol = ""
 style = "bg:gold"
 format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
 
 [java]
-symbol = ""
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[kotlin]
+symbol = ""
 style = "bg:gold"
 format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
 
 [haskell]
-symbol = ""
+symbol = ""
+style = "bg:gold"
+format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
+
+[python]
+symbol = ""
 style = "bg:gold"
 format = '[[ $symbol( $version) ](fg:base bg:gold)]($style)'
 
 [docker_context]
-symbol = ""
+symbol = ""
 style = "bg:pine"
 format = '[[ $symbol( $context) ](fg:text bg:pine)]($style)'
 
 [conda]
+symbol = ""
 style = "bg:pine"
-format = '[[ $symbol( $environment) ](fg:text bg:pine)]($style)'
+format = '[[ $symbol $environment ](fg:text bg:pine)]($style)'
+
+[pixi]
+style = "bg:pine"
+format = '[[ $symbol( $version)( $environment) ](fg:text bg:pine)]($style)'
 
 [time]
 disabled = false
